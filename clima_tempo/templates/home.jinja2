@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>clima_tempo</title>
+        <link rel="stylesheet" type="text/css" href="{{ request.static_url('clima_tempo:static/styles.css') }}">
+    </head>
+    <body>
+        <div class="container">
+        <img src="static/weather.png" alt="image" style="width:100px; margin-bottom:-20px;";/>
+        <h1>Weather App</h1>
+        <form method="GET" action="/weather">
+            <label for="city">Nome da Cidade:</label>
+            <input type="text" id="city" name="city" required>
+            <button type="submit">Buscar</button>
+        </form>
+
+        {% if weather_data %}
+        <div class="weather_info">
+            <h2>Weather in {{ request.params['city'] }} </h2>
+            <p><strong>Temperatura: </strong> {{ weather_data.temperature }} °C</p> 
+            <p><strong>Descrição: </strong> {{ weather_data.description }}</p> 
+            <p><strong>Umidade: </strong> {{ weather_data.humidity }} %</p> 
+            <p><strong>Pressão: </strong> {{ weather_data.pressure }} hPa</p> 
+            <p><strong>Velocidade do Vento: </strong> {{ weather_data.wind_speed }} m/s</p> 
+        </div>
+        {% elif error %}
+        <p class="error>{{error}}" </p>
+        {% endif %}
+        </div>
+    </body>
+    </html>
