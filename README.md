@@ -11,3 +11,5 @@
  - Entre na pasta que você clonou o repositório, pelo terminal, utilizando o comando 'cd'
 
  - Copie o seguinte comando: `python setup.py develop`
+
+ - E após o carregamento do anterior, copie este `pserve development.ini --reload`
