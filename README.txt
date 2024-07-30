@@ -1,4 +1,4 @@
-<h1> PASSO A PASSO </h1>
+<h2> PASSO A PASSO </h2>
 - Clone o repositório na sua máquina local.
 
 - Verifique se você possui a versão atual do Python.
