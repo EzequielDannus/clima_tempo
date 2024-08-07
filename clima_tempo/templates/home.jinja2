@@ -16,7 +16,7 @@
 
         {% if weather_data %}
         <div class="weather_info">
-            <h2>Weather in {{ request.params['city'] }} </h2>
+            <h2> Clima de/a: {{ request.params['city'] }} </h2>
             <p><strong>Temperatura: </strong> {{ weather_data.temperature }} °C</p> 
             <p><strong>Descrição: </strong> {{ weather_data.description }}</p> 
             <p><strong>Umidade: </strong> {{ weather_data.humidity }} %</p> 
