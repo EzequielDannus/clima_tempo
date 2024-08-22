@@ -23,3 +23,5 @@
  - E após o carregamento do anterior, copie este `pserve development.ini --reload`
 
  - Ao concluir as etapas anteriores, serão criados dois links localhost:
+ 
+ ![imagem](clima_tempo/static/Localhosts.png)
