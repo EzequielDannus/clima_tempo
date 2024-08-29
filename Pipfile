@@ -4,6 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+clima-tempo = {file = "."}
+googletrans = "*"
 
 [dev-packages]
 

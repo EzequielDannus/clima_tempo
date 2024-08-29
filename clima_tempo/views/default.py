@@ -23,8 +23,17 @@ def incrementar_contagem_cidade(cidade):
 
 def translate_text_googletrans(text, target_lang='pt'):
     translator = Translator()
-    translation = translator.translate(text, dest=target_lang)
-    return translation.text
+    try:
+        translation = translator.translate(text, dest=target_lang)
+        return translation.text
+    except AttributeError as e:
+        # Tratar o erro específico de AttributeError
+        print(f"Erro ao traduzir o texto: {e}")
+        return f"Erro na tradução: {text}"
+    except Exception as e:
+        # Tratar qualquer outra exceção que possa ocorrer
+        print(f"Ocorreu um erro inesperado: {e}")
+        return f"Erro na tradução: {text}"
 
 
 def get_contagem_cidades():
@@ -52,14 +61,15 @@ def weather(request):
         descricao = data['weather'][0]['description']
         descricao_traduzida = translate_text_googletrans(descricao)
         
-        velocidade_vento = data['wind']['speed']*3.6
+        velocidade_vento = data['wind']['speed']
+        velocidade_ventokm = velocidade_vento*3.6
 
         weather_data = {
             'temperature': data['main']['temp'],
             'description': descricao_traduzida,
             'humidity': data['main']['humidity'],
             'pressure': data['main']['pressure'],
-            'wind_speed': velocidade_vento,
+            'wind_speed': velocidade_ventokm,
         }
         
         # Atualizar contagem de pesquisa para a cidade
