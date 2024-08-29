@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="container">
-            <img src="{{ request.static_url('clima_tempo:static/weather.png') }}" alt="image" style="width:100px; margin-bottom:-20px;">
+            <img src="{{ request.static_url('clima_tempo:static/Clima_tempo.png') }}" alt="image" style="width:100px; margin-bottom:-20px;">
             <h1>Clima Tempo</h1>
             <form method="GET" action="/weather">
                 <label for="city">Nome da Cidade:</label>
@@ -20,7 +20,7 @@
                 <p><strong>Temperatura: </strong> {{ weather_data['temperature'] }} °C</p> 
                 <p><strong>Descrição: </strong> {{ weather_data['description'] }}</p> 
                 <p><strong>Umidade: </strong> {{ weather_data['humidity'] }} %</p> 
-                <p><strong>Velocidade do Vento: </strong> {{ weather_data['wind_speed'] }} KM/H</p> 
+                <p><strong>Velocidade do Vento: </strong> {{ weather_data['wind_speed'] }}km/h </p> 
             </div>
             {% elif error %}
             <p class="error">{{ error }}</p>
